@@ -34,7 +34,6 @@ unsigned int _printf(const char *format, ...)
 
         va_start(ap, format);
 
-
         for (; format && format[i] != '\0'; i++)
         {
 		
@@ -50,18 +49,14 @@ unsigned int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			j = 0;
 
 		}
 		else if (format[i] != '%')
 		{
 			_putchar(format[i]);
-		}
-	
-		
-
-
+		}	
 	}
-
 /*	i = 0;
         while(buffer[i] != '\0')
         {
@@ -74,12 +69,11 @@ unsigned int _printf(const char *format, ...)
 	va_end(ap);
 	return (i);
 }
-
 int main() 
 {
 	char s;
 
-	s = _printf("hi %c woopie \n", 'm'); 
+	s = _printf("hi %c woopie %c hey \n", 'm', 'h'); 
 	printf("%d is the length of buffer\n", s);
 	return 0;
 }
