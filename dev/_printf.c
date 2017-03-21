@@ -11,60 +11,64 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+
 
 unsigned int _printf(const char *format, ...)
 {
-	/*form_t print_type[] = {
-	  {'c', _print_char},
-	  {'\0', NULL}
-	  };*/
+	form_t print_type[] = {
+		{'c', p_char},
+		{'s', p_string},
+		{'i', p_num},
+		{'d', p_num},
+		{'r', p_rev},
+		{'R', p_rot13},
+		{'\0', NULL}
+	};
         unsigned int i = 0;
-	static char buffer[1024];
+	int j = 0;
+/*static char buffer[1024]; */
         va_list ap; 
 
         va_start(ap, format);
 
         for (; format && format[i] != '\0'; i++)
         {
-                while (format[i] != '%')
-                {
-                        buffer[i] = format[i];
-                        i++;
-                }/*
-                while (trekker && trekker[i] != '\0')
+		if (format[i] == '%')
 		{
-		j = 0;
-		while (print_type[j].type != NULL)
-		{
-		if (print_type[j].type == trekker[i])
-		{
-		print_type[j].func(ap);
+			i++;
+			while (print_type[j].type != '\0')
+			{
+				if (print_type[j].type == format[i])
+				{
+					print_type[j].func(ap);
+				}
+				j++;
+			}
+			j = 0;
 		}
+		else if (format[i] != '%')
+		{
+			_putchar(format[i]);
 		}
-		}*/
-		
 	}
+/*i = 0;
+        while(buffer[i] != '\0')
+        {
+                _putchar(buffer[i]);
+                i++;
+        }
+        buffer[i] = '\0';
+
+	buffer[i] = '\0'; */
 	va_end(ap);
-	i = 0;
-	while(buffer[i] != '\0')
-	{
-		_putchar(buffer[i]);
-		i++;
-	}
-	buffer[i] = '\0';
-	printf("This is the value of i: %d\n", i);
 	return (i);
 }
-
-int main() 
+/*int main() 
 {
 	char s;
 
-	s = _printf("hi\n"); 
-	printf("%d is the length of buffer\n", s);
+	s = _printf("%c %d %r %i %R, hello %s\n", 'K', 328, "NEW string", 4, "wooo hoo", "we did it AGAINE!"); 
+printf("%d is the length of buffer\n", s); 
 	return 0;
-} 
+}
+*/

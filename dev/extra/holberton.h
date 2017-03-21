@@ -11,12 +11,10 @@ typedef struct print_type
 	char type;
 	void (*func)();
 } form_t;
-int _putchar(char ch);
-void p_char(va_list ch);
-void p_num(va_list num);
-void p_float(va_list fl);
-void p_string(va_list str);
-void p_rot13(va_list rot);
-void p_rev(va_list ap);
+int _putchar(char c);
+void p_char(va_list ap);
+void p_string(va_list ap);
 int _strlen(char *s);
-#endif /* VARIADIC_FUNCTION_H */
+void p_num(va_list ap);
+unsigned int _printf(const char *format, ...);
+#endif

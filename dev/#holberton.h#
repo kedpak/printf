@@ -18,5 +18,5 @@ void p_float(va_list fl);
 void p_string(va_list str);
 void p_rot13(va_list rot);
 void p_rev(va_list ap);
-int _strlen(char *s);
+
 #endif /* VARIADIC_FUNCTION_H */

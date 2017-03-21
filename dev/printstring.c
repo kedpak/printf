@@ -12,45 +12,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int _strlen(char *s)
-{
-	int m;
 
-	m = 0;
-	while (s[m] != '\0')
-	{
-		m++;
-	}
-	return (m);
-}
-
-void p_num(va_list ap)
-{
-	print_number(va_arg(ap, int));
-}
-
-void p_string(va_list ap)
-{
-	char *string;
-	unsigned int i;
-
-	string = va_arg(ap, char *);
-	for (i = 0; i < _strlen(string); i++)
-	{
-		_putchar(string[i]);
-	}
-	
-}
-int _putchar(char ch)
-{
-	return (write(1, &ch, 1));
-}
-
-void p_char(va_list ap)
-{
-	_putchar(va_arg(ap, int));
-}
-        
 unsigned int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
@@ -58,6 +20,8 @@ unsigned int _printf(const char *format, ...)
 	      {'s', p_string},
 	      {'i', p_num},
 	      {'d', p_num},
+	      {'r', p_rev},
+	      {'R', p_rot13},
 	      {'\0', NULL}
 	      };
         unsigned int i = 0;
@@ -68,11 +32,9 @@ unsigned int _printf(const char *format, ...)
         va_start(ap, format);
 
         for (; format && format[i] != '\0'; i++)
-        {
-		
+        {		
 		if (format[i] == '%')
 		{
-
 			i++;
 			while (print_type[j].type != '\0')
 			{
@@ -83,7 +45,6 @@ unsigned int _printf(const char *format, ...)
 				j++;
 			}
 			j = 0;
-
 		}
 		else if (format[i] != '%')
 		{
@@ -106,7 +67,7 @@ int main()
 {
 	char s;
 
-	s = _printf("%c %d %s %i, hello %s\n", 'c', 244, "string", 4, "we did it!"); 
+	s = _printf("%c %d %r %i %R, hello %s\n", 'K', 328, "NEW string", 4, "wooo hoo", "we did it AGAINE!"); 
 /*	printf("%d is the length of buffer\n", s); */
 	return 0;
 }
