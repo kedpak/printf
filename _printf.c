@@ -1,18 +1,13 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
 #include <unistd.h>
-
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _printf - Behold, the magic function that should print many things to stdout
+ * @format: character pointer checking each character in string given,
+ * see man page!
+ * Return: number of chars
  */
-
-
 unsigned int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
@@ -28,15 +23,11 @@ unsigned int _printf(const char *format, ...)
 		{'%', p_percent},
 		{'\0', NULL}
 	};
-	unsigned int i = 0, k = 0;
-	int j = 0;
-/*static char buffer[1024]; */
-        va_list ap; 
+	unsigned int i = 0, k = 0; int j = 0; va_list ap;
 
-        va_start(ap, format);
-
-        for (; format && format[i] != '\0'; i++)
-        {
+	va_start(ap, format);
+	for (; format && format[i] != '\0'; i++)
+	{
 		if (format[i] == '%')
 		{
 			i++;
@@ -56,24 +47,6 @@ unsigned int _printf(const char *format, ...)
 			_putchar(format[i]);
 		}
 	}
-/*i = 0;
-        while(buffer[i] != '\0')
-        {
-                _putchar(buffer[i]);
-                i++;
-        }
-        buffer[i] = '\0';
-
-	buffer[i] = '\0'; */
 	va_end(ap);
 	return (i - k);
 }
-/*int main() 
-{
-	char s;
-
-	s = _printf("%c %d %r %i %R, hello %s\n", 'K', 328, "NEW string", 4, "wooo hoo", "we did it AGAINE!"); 
-printf("%d is the length of buffer\n", s); 
-	return 0;
-}
-*/

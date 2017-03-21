@@ -3,14 +3,13 @@
 #include "holberton.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * p_char - takes arg from args list and uses _putchar function
+ * @ap: args list 
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: N/A, void function
  */
 
 void p_char(va_list ap)
 {
-        _putchar(va_arg(ap, int));
+	_putchar(va_arg(ap, int));
 }

@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_number - print signed int number with _putchar
+ * @n: number to print
+ * Return: N/A
+ */
+
 void print_number(int n)
 {
 	int count, digits, temp, tempDig, divide;
