@@ -4,7 +4,7 @@ void p_hex(va_list ap) {
 	char hexDigits[] = "0123456789ABCDEF";
 	char hexadecimalNumber[40];
 	int decimalNumber = (va_arg(ap, int));
-	int index, remainder, i = 0;
+	int index, remainder;
 
 	index = 0;
       

@@ -31,5 +31,5 @@ void p_unum(va_list ap);
 void p_binary(va_list ap);
 void p_octal (va_list ap);
 void p_hex(va_list ap);
-void p_percent(va_list ap);
+void p_percent(void);
 #endif /* VARIADIC_FUNCTION_H */

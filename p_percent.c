@@ -5,7 +5,7 @@
  * p_percent - print percent char
  * @ap: input
  */
-void p_percent(va_list ap)
+void p_percent(void)
 {
         _putchar('%');
 }
