@@ -1,32 +1,29 @@
-#include <unistd.h>
 #include "holberton.h"
+
 /**
- * print_rev - print reverse with the use of _putchar
- * @s: string to be reversed
- * Return: amount of characters
- */
+ * print_rev - prints string in reverse
+ * @s: string parameter
+(* a blank line
+* Description: Longer description of the function)?
+(* section header: Section description)*
+* Return: N/A, just printing
+*/
+
 int print_rev(char *s)
 {
-	int i, j, length, char_count;
-	char *s;
+	int length = 0, chars;
 
-	s = va_arg(ap, char *);
-	if (s == NULL || s == ((char *)0))
+	while (s[length] != '\0')
 	{
-		s = "(null)";
-		length = _strlen(s);
-		for (i = 0; i < length; i++)
-		{
-			_putchar(s[i]);
-		}
-		return (length);
+		length++;
 	}
-	length = _strlen(s);
-	char_count = length;
-	while (length > 0)
+	length = length - 1;
+	chars = length;
+	while (length >= 0)
 	{
 		_putchar(s[length]);
 		length--;
 	}
-	return (char_count);
+	_putchar('\n');
+	return (chars);
 }
