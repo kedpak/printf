@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_number - print unsigned int number with _putchar
+ * print_unumber - print unsigned int number with _putchar
  * @n: number to print
  * Return: N/A
  */
