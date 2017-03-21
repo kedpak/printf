@@ -12,8 +12,8 @@ int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
 		{'c', p_char}, {'b', p_binary}, {'s', p_string}, {'d', p_num},
-		{'i', p_num}, {'u', p_unum}, {'o', p_octal}, {'x', p_hex},
-		{'X', p_hex}, {'%', p_percent}, {'\0', NULL}
+		{'i', p_num}, {'u', p_unum}, {'o', p_octal},
+		{'%', p_percent}, {'r', p_rev}, {'R', p_rot13}, {'\0', NULL}
 	};
 	int i, j, characters; va_list ap;
 
