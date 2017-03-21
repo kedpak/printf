@@ -17,13 +17,11 @@ int print_rev(char *s)
 	{
 		length++;
 	}
-	length = length - 1;
 	chars = length;
 	while (length >= 0)
 	{
 		_putchar(s[length]);
 		length--;
 	}
-	_putchar('\n');
 	return (chars);
 }
