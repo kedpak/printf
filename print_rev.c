@@ -3,28 +3,30 @@
 /**
  * print_rev - print reverse with the use of _putchar
  * @s: string to be reversed
- * Return: On success 1.
+ * Return: amount of characters
  */
 int print_rev(char *s)
 {
-	int i, j;
+	int i, j, length, char_count;
+	char *s;
 
-	i = 0;
-	if (s == NULL)
+	s = va_arg(ap, char *);
+	if (s == NULL || s == ((char *)0))
 	{
 		s = "(null)";
-		return (6);
+		length = _strlen(s);
+		for (i = 0; i < length; i++)
+		{
+			_putchar(s[i]);
+		}
+		return (length);
 	}
-	while (s[i] != '\0')
+	length = _strlen(s);
+	char_count = length;
+	while (length > 0)
 	{
-		i++;
+		_putchar(s[length]);
+		length--;
 	}
-	i = i - 1;
-	j = i;
-	while (i >= 0)
-	{
-		_putchar(s[i]);
-		i--;
-	}
-	return (j);
+	return (char_count);
 }
