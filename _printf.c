@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	};
 	int i, j, characters; va_list ap;
 
-	if(!format)
+	if (!format)
 		return (-1);
 	va_start(ap, format); i = 0; characters = 0;
 	while (format[i] != '\0')
