@@ -9,7 +9,8 @@
  * Return: N/A, void function
  */
 
-void p_char(va_list ap)
+int p_char(va_list ap)
 {
 	_putchar(va_arg(ap, int));
+	return (1);
 }

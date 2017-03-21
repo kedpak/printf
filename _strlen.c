@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strlen - finds the length of a string
@@ -9,7 +10,7 @@
 * Return: length of string
 */
 
-unsigned int _strlen(char *s)
+int _strlen(char *s)
 {
 	int length = 0;
 
@@ -17,5 +18,6 @@ unsigned int _strlen(char *s)
 	{
 		length++;
 	}
+	length--;
 	return (length);
 }

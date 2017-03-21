@@ -5,9 +5,9 @@
  * @s: string to be reversed
  * Return: On success 1.
  */
-void print_rev(char *s)
+int print_rev(char *s)
 {
-	int i;
+	int i, j;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -15,9 +15,11 @@ void print_rev(char *s)
 		i++;
 	}
 	i = i - 1;
+	j = i;
 	while (i >= 0)
 	{
 		_putchar(s[i]);
 		i--;
 	}
+	return (j);
 }

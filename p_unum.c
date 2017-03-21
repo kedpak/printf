@@ -6,7 +6,7 @@
  * Return: N/A, void function
  */
 
-void p_unum(va_list ap)
+int p_unum(va_list ap)
 {
-	print_unumber(va_arg(ap, unsigned int));
+	return (print_unumber(va_arg(ap, unsigned int)));
 }

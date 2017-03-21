@@ -7,7 +7,7 @@
  * Return: N/A void function
  */
 
-void p_string(va_list ap)
+int p_string(va_list ap)
 {
 	char *string;
 	unsigned int i, length;
@@ -18,4 +18,5 @@ void p_string(va_list ap)
 	{
 		_putchar(string[i]);
 	}
+	return (length);
 }

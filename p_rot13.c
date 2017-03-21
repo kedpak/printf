@@ -7,7 +7,7 @@
  * Return: N/A, void function
  */
 
-void p_rot13(va_list ap)
+int p_rot13(va_list ap)
 {
-	rot13(va_arg(ap, char *));
+	return (rot13(va_arg(ap, char *)));
 }

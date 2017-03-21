@@ -6,7 +6,7 @@
 * Return: N/A void function
 */
 
-void p_binary(va_list ap)
+int p_binary(va_list ap)
 {
 	int n  = (va_arg(ap, int));
 	int remainder;
@@ -19,5 +19,5 @@ void p_binary(va_list ap)
 		binary = binary + (remainder * i);
 		i = i * 10;
 	}
-	print_unumber(binary);
+	return (print_unumber(binary));
 }

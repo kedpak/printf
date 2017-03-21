@@ -6,7 +6,7 @@
 * Return: N/A void function
 */
 
-void p_hex(va_list ap)
+int p_hex(va_list ap)
 {
 	char hexDigits[] = "0123456789ABCDEF";
 	char hexadecimalNumber[40];
@@ -23,6 +23,7 @@ void p_hex(va_list ap)
 	}
 	hexadecimalNumber[index] = '\0';
 	print_rev(hexadecimalNumber);
+	return (print_rev(hexadecimalNumber));
 /*
  *  hexadecimalNumber = p_rev(hexadecimalNumber);
  *  while (hexadecimalNumber[i] != '\0')
