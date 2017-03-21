@@ -24,7 +24,6 @@ void _putchar(char c);
 int p_rot13(va_list rot);
 int p_rev(va_list ap);
 int print_number(int n);
-int print_rev(char *s);
 int rot13(char *str);
 int print_unumber(unsigned int n);
 int p_unum(va_list ap);
