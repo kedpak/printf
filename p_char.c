@@ -4,7 +4,7 @@
 
 /**
  * p_char - takes arg from args list and uses _putchar function
- * @ap: args list 
+ * @ap: args list
  *
  * Return: N/A, void function
  */
