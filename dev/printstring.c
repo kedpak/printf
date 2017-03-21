@@ -11,6 +11,36 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+
+int _strlen(char *s)
+{
+	int m;
+
+	m = 0;
+	while (s[m] != '\0')
+	{
+		m++;
+	}
+	return (m);
+}
+
+void p_num(va_list ap)
+{
+	print_number(va_arg(ap, int));
+}
+
+void p_string(va_list ap)
+{
+	char *string;
+	unsigned int i;
+
+	string = va_arg(ap, char *);
+	for (i = 0; i < _strlen(string); i++)
+	{
+		_putchar(string[i]);
+	}
+	
+}
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -25,6 +55,9 @@ unsigned int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
 	      {'c', p_char},
+	      {'s', p_string},
+	      {'i', p_num},
+	      {'d', p_num},
 	      {'\0', NULL}
 	      };
         unsigned int i = 0;
@@ -73,7 +106,9 @@ int main()
 {
 	char s;
 
-	s = _printf("hi %c woopie %c hey \n", 'm', 'h'); 
-	printf("%d is the length of buffer\n", s);
+	s = _printf("%c %d %s %i, hello %s\n", 'c', 244, "string", 4, "we did it!"); 
+/*	printf("%d is the length of buffer\n", s); */
 	return 0;
 }
+
+
