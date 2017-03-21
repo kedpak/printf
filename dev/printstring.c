@@ -16,23 +16,23 @@
 unsigned int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
-		{'c', p_char},
-		{'s', p_string},
-		{'i', p_num},
-		{'d', p_num},
-		{'r', p_rev},
-		{'R', p_rot13},
-		{'\0', NULL}
-	};
+	      {'c', p_char},
+	      {'s', p_string},
+	      {'i', p_num},
+	      {'d', p_num},
+	      {'r', p_rev},
+	      {'R', p_rot13},
+	      {'\0', NULL}
+	      };
         unsigned int i = 0;
 	int j = 0;
-/*static char buffer[1024]; */
+/*	static char buffer[1024]; */
         va_list ap; 
 
         va_start(ap, format);
 
         for (; format && format[i] != '\0'; i++)
-        {
+        {		
 		if (format[i] == '%')
 		{
 			i++;
@@ -49,9 +49,9 @@ unsigned int _printf(const char *format, ...)
 		else if (format[i] != '%')
 		{
 			_putchar(format[i]);
-		}
+		}	
 	}
-/*i = 0;
+/*	i = 0;
         while(buffer[i] != '\0')
         {
                 _putchar(buffer[i]);
@@ -63,12 +63,13 @@ unsigned int _printf(const char *format, ...)
 	va_end(ap);
 	return (i);
 }
-/*int main() 
+int main() 
 {
 	char s;
 
 	s = _printf("%c %d %r %i %R, hello %s\n", 'K', 328, "NEW string", 4, "wooo hoo", "we did it AGAINE!"); 
-printf("%d is the length of buffer\n", s); 
+/*	printf("%d is the length of buffer\n", s); */
 	return 0;
 }
-*/
+
+
