@@ -41,9 +41,9 @@ void p_string(va_list ap)
 	}
 	
 }
-int _putchar(char c)
+int _putchar(char ch)
 {
-	return (write(1, &c, 1));
+	return (write(1, &ch, 1));
 }
 
 void p_char(va_list ap)
