@@ -20,6 +20,8 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(ap, format); i = 0; characters = 0;
+	if (i == 0 && format[i + 1] == '\0')
+		return (-1);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -30,21 +32,18 @@ int _printf(const char *format, ...)
 				if (print_type[j].type == format[i + 1])
 				{
 					characters += print_type[j].func(ap);
-					i++;
-					break;
+					i++; break;
 				}
 				j++;
 			}
 			if (print_type[j].type == '\0')
 			{
-				_putchar('%');
-				characters++;
+				_putchar('%'); characters++;
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			characters++;
+			_putchar(format[i]); characters++;
 		}
 		i++;
 	}
