@@ -1,8 +1,8 @@
 #include "holberton.h"
 
-void print_number(int n)
+void print_unumber(unsigned int n)
 {
-	int count, digits, temp, tempDig, divide;
+	unsigned int count, digits, temp, tempDig, divide;
 
 	if (n == 0)
 	{
@@ -10,10 +10,6 @@ void print_number(int n)
 	}
 	else
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-		}
 		for (digits = 0, temp = n; temp != 0; digits++)
 		{
 			temp = temp / 10;
@@ -25,14 +21,7 @@ void print_number(int n)
 				tempDig = tempDig / 10;
 			}
 			tempDig = tempDig % 10;
-			if (tempDig < 0)
-			{
-				_putchar(-tempDig + '0');
-			}
-			else
-			{
-				_putchar(tempDig + '0');
-			}
+			_putchar(tempDig + '0');
 			tempDig = n;
 		}
 	}

@@ -17,14 +17,18 @@ unsigned int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
 		{'c', p_char},
+		{'b', p_binary},
 		{'s', p_string},
 		{'i', p_num},
 		{'d', p_num},
-		{'r', p_rev},
-		{'R', p_rot13},
+		{'u', p_unum},
+		{'o', p_octal},
+		{'x', p_hex},
+		{'X', p_hex},
+		{'%', p_percent},
 		{'\0', NULL}
 	};
-        unsigned int i = 0;
+	unsigned int i = 0, k = 0;
 	int j = 0;
 /*static char buffer[1024]; */
         va_list ap; 
@@ -36,6 +40,7 @@ unsigned int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			k++;
 			while (print_type[j].type != '\0')
 			{
 				if (print_type[j].type == format[i])
@@ -61,7 +66,7 @@ unsigned int _printf(const char *format, ...)
 
 	buffer[i] = '\0'; */
 	va_end(ap);
-	return (i);
+	return (i - k);
 }
 /*int main() 
 {
