@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 		{'c', p_char},
 		{'b', p_binary},
 		{'s', p_string},
-		{'i', p_num},
 		{'d', p_num},
+		{'i', p_num},
 		{'u', p_unum},
 		{'o', p_octal},
 		{'x', p_hex},
@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			j = 0;
 			while (print_type[j].type != '\0')
 			{
 				if (print_type[j].type == format[i])
