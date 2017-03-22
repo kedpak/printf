@@ -29,7 +29,7 @@ void rot13(char *str);
 void print_unumber(unsigned int n);
 void p_unum(va_list ap);
 void p_binary(va_list ap);
-void p_octal (va_list ap);
+void p_octal(va_list ap);
 void p_hex(va_list ap);
 void p_percent(void);
 unsigned int _strlen(char *s);

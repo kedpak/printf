@@ -3,9 +3,9 @@
 
 /**
  * p_percent - print percent char
- * @ap: input
+ * Return: N/A void function
  */
 void p_percent(void)
 {
-        _putchar('%');
+	_putchar('%');
 }

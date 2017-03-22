@@ -1,28 +1,23 @@
 #include <unistd.h>
 #include "holberton.h"
-
 /**
- * _putchar - writes the character c to stdout
- * @s: The character to print
- *
+ * print_rev - print reverse with the use of _putchar
+ * @s: string to be reversed
  * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
  */
-
-
 void print_rev(char *s)
 {
-        int i;
+	int i;
 
-        i = 0;
-        while (s[i] != '\0')
-        {
-                i++;
-        }
-        i = i - 1;
-        while (i >= 0)
-        {
-                _putchar(s[i]);
-                i--;
-        }
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	i = i - 1;
+	while (i >= 0)
+	{
+		_putchar(s[i]);
+		i--;
+	}
 }
