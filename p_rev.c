@@ -9,8 +9,6 @@
 
 void p_rev(va_list ap)
 {
-<<<<<<< HEAD
-
 	char *revs;
 
         revs = print_rev(va_arg(ap, char *));
@@ -19,8 +17,4 @@ void p_rev(va_list ap)
 		return;
 	}
 	print_rev(va_arg(ap, char *));
-
-=======
-	print_rev(va_arg(ap, char *));
->>>>>>> 9b743a29e21dbba5192bd8da66559851314abe36
 }
