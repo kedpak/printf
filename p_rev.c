@@ -14,7 +14,7 @@ void p_rev(va_list ap)
         revs = print_rev(va_arg(ap, char *));
 	if (revs == NULL)
 	{
-		return;
+		return (NULL);
 	}
 	print_rev(va_arg(ap, char *));
 }
