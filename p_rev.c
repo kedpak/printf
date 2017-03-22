@@ -9,10 +9,7 @@
 
 void p_rev(va_list ap)
 {
-	char *revs;
-
-        revs = print_rev(va_arg(ap, char *));
-	if (revs == NULL)
+	if (ap == NULL)
 	{
 		return (NULL);
 	}
