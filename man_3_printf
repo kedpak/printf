@@ -1,0 +1,38 @@
+.TH man 2 "21 March 2017" "0.0" "Custom printf man page"
+.SH NAME
+.B _printf.c 
+- This program recreates a custom printf function in C. 
+.SH SYNOPSIS
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
+#include <unistd.h>
+
+unsigned int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+.RS 3 The function _printf produces a data type passed through the format to stdout. _printf returns the number of characters printed based on the amount of argument characters passed through the function. 
+.B Format string 
+A format string consists of a string of characters. Default characters (characters that are %) are duplicated to the output. The conversion specifiers that are intitilized by the % ends with a conversion specifier. Each of the arguments must  correspond correctly with the conversion specifier (ex. _printf("Hello, I own %d cats and %d dogs", 3, 5)). 
+.B Flag characters
+The _printf function takes several flag characters that convert it to an alternative form. The characters are followed by the % symbol. The characters used for conversion include c,b,s,i,d,u,o,x,X,%. 
+c - This conversion specifier represents characters.  
+b - This conversion specifier represents binaries.
+s - This conversion specifier represents strings.
+i/d - The i and d specifiers represents integers.
+u - This conversion specifier converts unsigned integers.
+o - This conversion specifier represents octals.
+x - This conversion specifier represents lowercase hexidecimals.
+X - This conversion specifier represents uppercase hexidecimals. 
+% - This conversion specifier represents the % character. 
+
+.B Helper funtions
+Several helper functions are utilized inside of the _printf function. Each format specifer is called by a custom fucntion. 
+Will includ tomorrow
+.SH OPTIONS
+Does not take options at this time.
+.SH BUGS
+No known bugs as of now. 
+.SH AUTHOR
+Hunter Casbeer and Kevin Pak
