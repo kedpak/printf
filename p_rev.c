@@ -9,9 +9,5 @@
 
 void p_rev(va_list ap)
 {
-	if (ap == NULL)
-	{
-		return (NULL);
-	}
 	print_rev(va_arg(ap, char *));
 }
