@@ -7,7 +7,7 @@
 * Return: N/A void function
 */
 
-void p_num(va_list ap)
+int p_num(va_list ap)
 {
-	print_number(va_arg(ap, int));
+	return (print_number(va_arg(ap, int)));
 }

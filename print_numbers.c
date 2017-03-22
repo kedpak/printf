@@ -6,19 +6,21 @@
  * Return: N/A
  */
 
-void print_number(int n)
+int print_number(int n)
 {
-	int count, digits, temp, tempDig, divide;
+	int count, digits, temp, tempDig, divide, j = 0;
 
 	if (n == 0)
 	{
 		_putchar('0');
+		return (1);
 	}
 	else
 	{
 		if (n < 0)
 		{
 			_putchar('-');
+			j++;
 		}
 		for (digits = 0, temp = n; temp != 0; digits++)
 		{
@@ -42,4 +44,5 @@ void print_number(int n)
 			tempDig = n;
 		}
 	}
+	return (digits + j);
 }

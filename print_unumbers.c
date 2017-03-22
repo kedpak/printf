@@ -6,13 +6,14 @@
  * Return: N/A
  */
 
-void print_unumber(unsigned int n)
+int print_unumber(unsigned int n)
 {
 	unsigned int count, digits, temp, tempDig, divide;
 
 	if (n == 0)
 	{
 		_putchar('0');
+		return (1);
 	}
 	else
 	{
@@ -31,4 +32,5 @@ void print_unumber(unsigned int n)
 			tempDig = n;
 		}
 	}
+	return (digits);
 }

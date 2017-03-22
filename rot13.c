@@ -6,12 +6,13 @@
  * @str: input string
  * Return: void
  */
-void rot13(char *str)
+int rot13(char *str)
 {
-	int i, j;
+	int i, j, length;
 	char *a1 = "abcdefghijklmABCDEFGHIJKLM";
 	char *a2 = "nopqrstuvwxyzNOPQRSTUVWXYZ";
 
+	length = _strlen(str);
 	for (i = 0; str[i] != 0; i++)
 	{
 		for (j = 0; j <= 25; j++)
@@ -32,4 +33,5 @@ void rot13(char *str)
 			_putchar(str[i]);
 		}
 	}
+	return (length);
 }

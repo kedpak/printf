@@ -7,7 +7,7 @@
  * Return: N/A void function
  */
 
-void p_rev(va_list ap)
+int p_rev(va_list ap)
 {
-	print_rev(va_arg(ap, char *));
+	return (print_rev(va_arg(ap, char *)));
 }

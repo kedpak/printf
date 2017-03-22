@@ -6,7 +6,7 @@
 * Return: N/A void function
 */
 
-void p_octal(va_list ap)
+int p_octal(va_list ap)
 {
 	unsigned int remainder;
 	unsigned int octal = 0, i = 1;
@@ -19,5 +19,5 @@ void p_octal(va_list ap)
 		octal = octal + (remainder * i);
 		i = i * 10;
 	}
-	print_unumber(octal);
+	return (print_unumber(octal));
 }

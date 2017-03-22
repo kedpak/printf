@@ -8,7 +8,7 @@
  * see man page!
  * Return: number of chars
  */
-unsigned int _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	form_t print_type[] = {
 		{'c', p_char},
@@ -23,7 +23,7 @@ unsigned int _printf(const char *format, ...)
 		{'%', p_percent},
 		{'\0', NULL}
 	};
-	unsigned int i = 0, k = 0; int j = 0; va_list ap;
+	unsigned int i = 0; int j = 0, characters = 0; va_list ap;
 
 	va_start(ap, format);
 	for (; format && format[i] != '\0'; i++)
@@ -31,22 +31,21 @@ unsigned int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			k++;
 			while (print_type[j].type != '\0')
 			{
 				if (print_type[j].type == format[i])
 				{
-					print_type[j].func(ap);
+					characters += print_type[j].func(ap);
 				}
 				j++;
 			}
-			j = 0;
 		}
 		else if (format[i] != '%')
 		{
 			_putchar(format[i]);
+			characters++;
 		}
 	}
 	va_end(ap);
-	return (i - k);
+	return (characters);
 }
